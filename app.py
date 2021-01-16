@@ -2,18 +2,18 @@ import pandas as pd
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-
+from password import pw
 
 from flask import Flask, jsonify
 
 
-path = 'postgresql://postgres:postgres@localhost:5432/rpi_comp'
+path = 'postgresql://postgres:' + pw + '@localhost:5432/rpi_comp'
 
 engine = create_engine(path)
 conn = engine.connect()
 
-# Access our DB through pandas dataframe
-data = pd.read_sql("SELECT * FROM rpi", conn).to_json()
+# Access our DB through pandas dataframe - convert to json - record oriented
+data = pd.read_sql("SELECT * FROM rpi", conn).to_json(orient='records')
 
 # Access database through sql alchemy
 # db = engine.execute('SELECT * FROM "rpi"').fetchall()
