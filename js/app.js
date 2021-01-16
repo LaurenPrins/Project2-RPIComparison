@@ -78,6 +78,42 @@ d3.csv('data/CSV_RPI_Data_Clean.csv').then( rpiData => {
         .data(rpiData)
         .enter()
         .append('circle')
-        .attr('class', 'stateCircle ')
+        .attr('class', 'TOWN_LOCALITYCircle active inactive')
+        .attr('cx', d => xLinearScale(d.YEAR) )
+        .attr('cy', d => yLinearScale(d.ALL_GROUPS))
+        .attr('r', '12');
+
+    // append SVG text
+    chartGroup.selectAll('text')
+        .data(rpiData)
+        .enter()
+        .append('text')
+        .text( d => d.TOWN_LOCALITY)
+        .attr('class', 'aText TOWN_LOCALTYText active inactive')
+        .attr('dominant-baseline', 'central')
+        .attr('x', d => xLinearScale(d.YEAR) )
+        .attr('y', d => yLinearScale(d.ALL_GROUPS))
+        .on('mouseover', d3Tip.show)
+        .on('mouseout', d3Tip.hide);
+
+    // append SVG group with left axis
+    chartGroup.append('g')
+        .attr('class', 'axis')
+        .call(leftAxis)
+        .append('text')
+        .attr('class', 'axis-title')
+        .attr('transform', `translate(${-margin.left * 0.5}, ${(chartHeight - margin.top) * 0.5}) rotate(-90)`)
+        .text('Year');
+
+    // append SVG group with bottom axis
+    chartGroup.append('g')
+        .attr('class', 'axis')
+        .attr('transform', `translate(0, ${chartHeight})`)
+        .call(bottomAxis)
+        .append('text')
+        .attr('class', 'axis-title')
+        .attr('transform', `translate(${chartWidth * 0.5}, ${margin.bottom * 0.5})` )
+        .text("All Group Variables");
+
 
 })
