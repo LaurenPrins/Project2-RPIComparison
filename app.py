@@ -3,6 +3,8 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from password import pw
+import json
+
 
 from flask import Flask, jsonify, render_template
 
@@ -32,8 +34,11 @@ app = Flask(__name__)
 @app.route("/api/v1.0/rpi_comp")
 def regional():
     """Return the rpi_comp db"""
+# Convert string to json 
 
-    return data
+    data_json = json.loads(data)
+
+    return jsonify(data_json)
 
 
 @app.route("/") 
