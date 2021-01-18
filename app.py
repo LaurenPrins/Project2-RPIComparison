@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from password import pw
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 
 path = 'postgresql://postgres:' + pw + '@localhost:5432/rpi_comp'
@@ -36,7 +36,7 @@ def regional():
     return data
 
 
-@app.route("/")
+@app.route("/") 
 def welcome():
     return (
         f"Regional Price Index Analysis!<br/>"
@@ -44,6 +44,9 @@ def welcome():
         f"/api/v1.0/rpi_comp"
     )
 
+@app.route("/index")
+def index():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
