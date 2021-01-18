@@ -24,7 +24,7 @@ var svg = d3.select('#scatter')
 var chartGroup = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);  
 
-d3.csv('data/CSV_RPI_Data_Clean.csv').then( rpiData => {
+d3.json("/api/v1.0/rpi_comp", function(rpiData) {
 
     // log the rpiData
     console.log(rpiData);
