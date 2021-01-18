@@ -24,13 +24,13 @@ var svg = d3.select('#scatter')
 var chartGroup = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);  
 
-d3.json("/api/v1.0/rpi_comp", function(rpiData) {
+d3.json("/api/v1.0/rpi_comp").then(function(data) {
 
     // log the rpiData
-    console.log(rpiData);
+    console.log(data);
 
     // cast strings to number
-    rpiData.forEach( d => {
+    data.forEach( d => {
         d.YEAR = +d.YEAR;
         d.FOOD = +d.FOOD;
         d.CLOTHING = +d.CLOTHING;
@@ -46,8 +46,8 @@ d3.json("/api/v1.0/rpi_comp", function(rpiData) {
     // x-scale - 5% padding left & right
     var xLinearScale = d3.xLinearScale()
         .domain([
-            d3.min( rpiData, d => d.YEAR ) * 0.95,
-            d3.max( rpiData, d => d.YEAR ) * 1.05
+            d3.min( data, d => d.YEAR ) * 0.95,
+            d3.max( data, d => d.YEAR ) * 1.05
         ])
         .range([chartWidth])
         .nice();
@@ -55,8 +55,8 @@ d3.json("/api/v1.0/rpi_comp", function(rpiData) {
     // y-scale - 5% padding top & bottom
     var yLinearScale = d3.yLinearScale()
         .domain([
-            d3.min( rpiData, d => d.ALL_GROUPS ) * 0.95,
-            d3.max( rpiData, d => d.ALL_GROUPS ) * 1.05
+            d3.min( data, d => d.ALL_GROUPS ) * 0.95,
+            d3.max( data, d => d.ALL_GROUPS ) * 1.05
         ])
         .range([chartHeight, 0])
         .nice();
@@ -75,7 +75,7 @@ d3.json("/api/v1.0/rpi_comp", function(rpiData) {
     
     // append SVG circles
     chartGroup.selectAll('circle')
-        .data(rpiData)
+        .data(data)
         .enter()
         .append('circle')
         .attr('class', 'TOWN_LOCALITYCircle active inactive')
@@ -85,7 +85,7 @@ d3.json("/api/v1.0/rpi_comp", function(rpiData) {
 
     // append SVG text
     chartGroup.selectAll('text')
-        .data(rpiData)
+        .data(data)
         .enter()
         .append('text')
         .text( d => d.TOWN_LOCALITY)

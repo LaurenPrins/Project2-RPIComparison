@@ -15,7 +15,7 @@ var myMap = L.map("map", {
     maxZoom: 15,
     zoomOffset: -1,
     id: "mapbox/streets-v11",
-    accessToken: API_KEY
+    accessToken: "pk.eyJ1IjoiY3lydXNhdXlldW5nYyIsImEiOiJja2ppZnJla3k0dXY5MnNucDRwajY4MWsxIn0.Y49rKli6lAJRxKPEoI-N9A"
   }).addTo(myMap);
   
   var marker = L.marker([-31.950527, 115.860458], {
