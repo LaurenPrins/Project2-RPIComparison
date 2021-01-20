@@ -44,7 +44,7 @@ d3.json("/api/v1.0/rpi_comp").then(function(data) {
     });
 
     // x-scale - 5% padding left & right
-    var xLinearScale = d3.xLinearScale()
+    var xlinearScale = d3.xLinearScale()
         .domain([
             d3.min( data, d => d.YEAR ) * 0.95,
             d3.max( data, d => d.YEAR ) * 1.05
