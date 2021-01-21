@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  
+  <meta charset="utf-8">
+  <title>RPI Data Distribution per Year - Violin Plot</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="static/css/style2.css">
+  <link rel="stylesheet" href="static/css/d3Style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <!-- API key -->
+   <!--  <script type="text/javascript" src="static/js/config.js"></script> -->
+  <!-- JS -->
+  <!-- <script type="text/javascript" src="static/js/logic.js"></script> -->
+
+  <meta charset="utf-8">
+  <title>Regional Price Index</title>
+
+ 
+</head>
+
+<body style="background-color: lightgray;">
+    <div class="row"></div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a id="header" href="index.html"><strong>Western Australia Regional Price Index (RPI) 2000-2019</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="col-md-9"></div>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="nav-item">
+                  <a class="nav-link" href="scatter.html">Scatter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="violin_plot.html">Violin Graph</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="data.html">Map</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 box">
+        <h1>Correlations between different categories</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <!-- Create Violin plot selection menu -->
+        <div id="buttons">
+          <!-- The div where we will inject our violin plot -->
+          <div id="violinplot box"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3  col-md-9 box">
+        <div class="article">
+          <h2>Correlations Discovered Between Health Risks and Age, Income</h2>
+          <p>This is an interactive chart to show the correlation between 2 sets of RPI index. The data set is based on findings from 7 years.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>The Coding Boot Camp&copy;2021</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- API key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- JS -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Bootstrap Script for interactive button  -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="static/js/violin.js"></script>
+  
+</body>
+</html>
