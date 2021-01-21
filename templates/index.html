@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+       
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Regional Price Index</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="static/css/style.css">
+
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <!-- API key -->
+   <!--  <script type="text/javascript" src="static/js/config.js"></script> -->
+  <!-- JS -->
+  <!-- <script type="text/javascript" src="static/js/logic.js"></script> -->
+
+  <meta charset="utf-8">
+  <title>Regional Price Index</title>
+
+ 
+</head>
+
+<body>
+  <h1>Western Australia Regional Price Index (RPI) 2000-2019<h1>
+    <h2>Project Team Members <hr></h2>
+    <h3>Nalishebo Meebelo <br> Cyrus Au Yeing <br> Daniel Da Sobral <br> Lauren Prins <br> Brett Wallis</h3>
+  <!-- The div where we will inject our map -->
+  <div id="map"></div>
+  <div id="scatter1"></div>
+  <div id="scatter2"></div>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <!-- API key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- JS -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="{{url_for('static',filename='js/scattercharts.js')}}" ></script>
+  <script type="text/javascript" src="static/js/app.js"></script>
+  <script type="text/javascript" src="static/js/logic.js"></script>
+  
+
+</body>
+</html>
