@@ -34,33 +34,28 @@
   <meta charset="utf-8">
   <title>Regional Price Index</title>
 
- 
 </head>
+
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <h1>Correlations between different categories</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12  col-md-9">
-        <!-- Create Violin plot selection menu -->
-        <div id="buttons">
-          <!-- The div where we will inject our violin plot -->
-          <div id="violinplot"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3  col-md-9">
-        <div class="article">
-          <h2>Correlations Discovered Between Health Risks and Age, Income</h2>
-          <p>This is an interactive chart to show the correlation between 2 sets of RPI index. The data set is based on findings from 7 years.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  
+  <div id="violinplot"></div>
+
+  <select id="selDataset">
+    <option value="food">Food</option>
+    <option value="clothing">Clothing</option>
+    <option value="tobacco_alcohol">Tobacco & Alcohol</option>
+    <option value="tobacco_alcohol">Household Equipment & Operation</option>
+    <option value="tobacco_alcohol">Health and Personal Care</option>
+    <option value="tobacco_alcohol">Housing</option>
+    <option value="tobacco_alcohol">transportation</option>
+    <option value="tobacco_alcohol">Recreation</option>
+    <option value="tobacco_alcohol">All Groups</option>
+  </select>
+
+  
+    </body>
+
 
   <!-- Footer-->
   <div id="footer">
