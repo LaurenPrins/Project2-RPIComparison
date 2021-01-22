@@ -15,6 +15,9 @@
 
   <!-- Our CSS -->
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 
   <!-- Leaflet JS -->
@@ -32,10 +35,46 @@
  
 </head>
 
-<body>
-  <h1>Western Australia Regional Price Index (RPI) 2000-2019<h1>
-    <h2>Project Team Members <hr></h2>
-    <h3>Nalishebo Meebelo <br> Cyrus Au Yeing <br> Daniel Da Sobral <br> Lauren Prins <br> Brett Wallis</h3>
+<body style="background-color: lightgray;">
+  <div class="row"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a id="header" href="index.html"><strong>Western Australia Regional Price Index (RPI) 2000-2019</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="col-md-9"></div>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="scatter.html">Scatter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="violin_plot.html">Violin Graph</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="map.html">Map</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container"></div>
+      <div class="row">
+      <div class="col-md-2">
+        <h2 class="box"> Project Team Members </h2>
+        <p class="box">Nalishebo Meebelo <br> Cyrus Au Yeing <br> Daniel Da Sobral <br> Lauren Prins <br> Brett Wallis</p>
+      </div>
+      <div class="col-md-8">
+        <h1 class="box">Map Analysis</h1>
+
+        <!-- <p class="box" id="bold">
+
+        </p> -->
+
+      </div>
+      </div>
+    </div>
   <!-- The div where we will inject our map -->
   <div id="map"></div>
   <div id="scatter1"></div>
