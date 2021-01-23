@@ -1,6 +1,6 @@
 
 // Load data from API
-d3.json("/api/v1.0/rpi_comp").then(function(data) {
+d3.csv("static/data/data.csv").then(function(data) {
 
       town = []
       region = []
