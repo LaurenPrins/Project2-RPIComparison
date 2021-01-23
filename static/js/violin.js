@@ -82,7 +82,7 @@ d3.csv("static/data/data.csv").then(function(data) {
             }]
     
       var layout = {
-            title: "Multiple Traces Violin Plot",
+            title: "RPI Variation Distribution per Yearultiple Traces Violin Plot",
             yaxis: {
             zeroline: true
             }
